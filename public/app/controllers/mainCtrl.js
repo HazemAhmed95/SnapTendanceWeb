@@ -8,7 +8,7 @@ angular.module('mainCtrl', [])
 			Dept: "",
 			Time: ""
 		};
-			
+ vm.students 
 		firebase.auth().onAuthStateChanged(function (user) {
 			if (user) {
 				vm.user = user;
@@ -31,33 +31,38 @@ angular.module('mainCtrl', [])
 			});
 		}
 
-	firebase.auth()
+		firebase.auth()
 		vm.showLectureForm = function () {
-		
+
 			vm.showform = true;
 		}
 
 		vm.getQRCode = function () {
-			console.log( 	vm.lecture);
-	 let newLectKey = firebase.database().ref().child("/lectuers/").push().key
-	 //add the lectuer ID under the proff
-	 		firebase.database().ref("/lectuers/"+newLectKey)
-      .set({
-			   CourseName: 	vm.lecture.CourseName,
-				 Dept : vm.lecture.Dept,
-				 Time : String(vm.lecture.Time),
-				 ProfID : vm.user.uid
-				})	
-				.then(function(){
-					alert("lecture added");
-						vm.showform = false;
+			console.log(vm.lecture);
+			let newLectKey = firebase.database().ref().child("/lectuers/").push().key
+			//add the lectuer ID under the proff
+			firebase.database().ref("/lectuers/" + newLectKey)
+				.set({
+					CourseName: vm.lecture.CourseName,
+					Dept: vm.lecture.Dept,
+					Time: String(vm.lecture.Time),
+					ProfID: vm.user.uid
 				})
-				
-			//Get the firebase ref and create an ID
+				.then(function () {
+					alert("lecture added");
+					vm.showform = false;
+				})
+
 			//construct the QR code 
-			vm.QRcode = "http://api.qrserver.com/v1/create-qr-code/?data="+newLectKey+"&size=500x500"
-		
+			vm.QRcode = "http://api.qrserver.com/v1/create-qr-code/?data=" + newLectKey + "&size=500x500"
+
 		}
+		firebase.database().ref("lectuers/-Kjmu7S5TU_Fwyl9jvH1").on('value',function(snapshot){
+ vm.students = snapshot.val().students;
+ vm.arr = Object.keys(vm.students).map(function (key) { return vm.students[key]; });
+
+ console.log( vm.arr);
+		})
 	});
 
 

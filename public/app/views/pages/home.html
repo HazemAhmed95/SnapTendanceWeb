@@ -8,7 +8,7 @@
 
     <button ng-if="main.isLoggedIn" type="button" class="btn btn-info btn-lg" ng-click="main.showLectureForm()">Add Lecture</button>
   
- 
+
           
           <form ng-show="main.showform">
               <div class="form-group">
@@ -36,5 +36,12 @@
    <a href={{main.QRcode}}> 
 <img ng-src = {{main.QRcode}} align="middle">
 </div>
+
   </section>
+  
+  <h2> attendance<h2>
+  <ul>
+   <li style="text-align: center" ng-repeat="s in  main.arr">
+{{s.name}} </li>
+</ul>
 </div>
