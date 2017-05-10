@@ -1,0 +1,40 @@
+<div class="container">
+  <section class="home">
+    <div class="home-desc-wrapper">
+      <h3>SnapTendance is a student attendance management system for universities and schools. Part of the system will be an application for the Android and IOS platform which will allow the students to register their attendance and keep tracking of their records and the second part is a web application for the Professors to track and record their lectures
+      attendees.</h3>
+    </div>
+    <a ng-if="!main.isLoggedIn" href="/signup" type="button" class="btn btn-primary btn-lg">Start Now</a>
+
+    <button ng-if="main.isLoggedIn" type="button" class="btn btn-info btn-lg" ng-click="main.showLectureForm()">Add Lecture</button>
+  
+ 
+          
+          <form ng-show="main.showform">
+              <div class="form-group">
+                <label for="pwd"></label>
+                <input type="text" ng-model = "main.lecture.CourseName" class="form-control" id="pwd" placeholder="Course Name" name="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Lecture Date</label>
+                <input type="date" ng-model = "main.lecture.Time" class="form-control" id="pwd" placeholder="Lecture Date" name="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Department</label>
+                <input type="text"ng-model = "main.lecture.Dept" class="form-control" id="pwd" placeholder="Department" name="pwd">
+              </div>
+              <button  ng-click="main.getQRCode()"  class="btn btn-default">Submit</button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center" ng-show="main.QRcode" >
+    <hr> 
+    <h1 >SCAN THIS </h1>
+   <a href={{main.QRcode}}> 
+<img ng-src = {{main.QRcode}} align="middle">
+</div>
+  </section>
+</div>

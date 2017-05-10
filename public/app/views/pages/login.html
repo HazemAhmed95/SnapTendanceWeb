@@ -1,0 +1,13 @@
+<div class="container">
+  <form ng-submit="vm.logIn()" id="loginForm" class="col-xs-8 col-xs-offset-2">
+    <div class="form-group">
+      <input type="email" class="form-control" id="loginEmail" placeholder="email" ng-model="vm.userData.email" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="loginPassword" placeholder="Password" ng-model="vm.userData.password" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-default">Log in</button>
+    </div>
+  </form>
+</div>

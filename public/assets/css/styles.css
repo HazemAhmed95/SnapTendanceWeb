@@ -1,0 +1,74 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-default {
+  background-color: #4dc3ff;
+  border-color:  #4dc3ff;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+  color: #fff;
+}
+
+.home {
+  text-align: center;
+}
+
+.home a {
+  width: 190px;
+  outline: none;
+  color: #fff;
+  background-color: #4dc3ff;
+}
+
+.home a:focus,
+.home a:active:focus,
+.home a:hover {
+  outline: none;
+  background-color: #4dc3ff;
+}
+
+.home button:focus,
+.home button:active:focus,
+.home button:hover {
+  outline: none;
+  background-color: #4dc3ff;
+}
+
+.home-desc-wrapper {
+  width: 80%;
+  margin: 100px auto;
+}
+
+.home-desc-wrapper h3 {
+  text-align: left;
+}
+
+#loginForm,
+#signupForm {
+  margin-top: 100px;
+}
+
+.invalid-wrapper h2 {
+  margin-top: 80px;
+}
+
+.invalid-wrapper h3,
+.invalid-wrapper h4 {
+  margin-top: 50px;
+}
